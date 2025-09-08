@@ -1,0 +1,10 @@
+{
+  "interval": 600000,
+  "enabled": true,
+  "theme": "default",
+  "opacity": 0.95,
+  "alwaysOnTop": true,
+  "centerPosition": true,
+  "reminderDuration": 10000,
+  "autoStart": true
+}

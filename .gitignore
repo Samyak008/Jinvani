@@ -1,0 +1,33 @@
+# Node/Electron
+node_modules/
+dist/
+out/
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env/Secrets
+.env
+.env.local
+*.local
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Builds/Packaging
+*.asar
+release/
+build/
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+/tmp
