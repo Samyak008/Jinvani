@@ -56,11 +56,15 @@ class ThoughtReminderApp {
  }
 
  private createTray(): void {
-   // Create a simple icon for the tray (you can replace with an actual icon file)
-   const icon = nativeImage.createFromDataURL('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==');
-   
-   this.tray = new Tray(icon);
-   this.tray.setToolTip('Thought Reminder');
+  // Load icon from assets folder instead of using placeholder
+  const iconPath = path.join(__dirname, '../assets/logo.png');
+  const icon = nativeImage.createFromPath(iconPath);
+  
+  // If icon is too large, resize it to appropriate tray size
+  const trayIcon = icon.resize({ width: 16, height: 16 });
+  
+  this.tray = new Tray(trayIcon);
+  this.tray.setToolTip('Jinvani');
 
    const contextMenu = Menu.buildFromTemplate([
      {

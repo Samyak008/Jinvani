@@ -4,6 +4,8 @@
   "description": "Electron MVP that shows periodic spiritual thoughts you must acknowledge.",
   "main": "dist/main.js",
   "scripts": {
+    "create-icons": "node scripts/create-icons.js",
+  "make-ico": "node scripts/make-ico.js",
     "clean": "rimraf dist",
     "build:ts": "tsc",
     "build:assets": "copyfiles -u 2 \"src/ui/**/*\" dist/ui && copyfiles -u 2 \"src/content/thoughts.json\" dist/content && copyfiles -u 2 \"src/storage/*.json\" dist/storage",
@@ -12,7 +14,52 @@
     "dev:assets": "chokidar --initial \"src/ui/**/*\" \"src/content/thoughts.json\" \"src/storage/*.json\" -c \"npm run build:assets\"",
     "dev:electron": "wait-on dist/main.js dist/ui/popup.html dist/content/thoughts.json dist/storage/config.json dist/storage/state.json && electron .",
     "dev": "concurrently -k -n ts,assets,app -c yellow,cyan,green \"npm:dev:ts\" \"npm:dev:assets\" \"npm:dev:electron\"",
-    "start": "npm run build && electron ."
+    "start": "npm run build && electron .",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder --publish=never"
+  },
+  "build": {
+    "appId": "com.jinvani.app",
+    "productName": "Jinvani",
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "assets/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "assets/icon.ico",
+  "signingHashAlgorithms": [],
+  "forceCodeSigning": false,
+      "certificateFile": false,
+      "certificatePassword": false,
+      "sign": false,
+      "verifyUpdateCodeSignature": false
+    },
+    "mac": {
+      "category": "public.app-category.lifestyle",
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": null
   },
   "devDependencies": {
     "@types/node": "^22.7.0",
@@ -20,6 +67,8 @@
     "concurrently": "^9.0.0",
     "copyfiles": "^2.4.1",
     "electron": "^31.3.0",
+    "electron-builder": "24.6.4",
+    "png-to-ico": "^3.0.1",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.2",
     "wait-on": "^7.2.0"
