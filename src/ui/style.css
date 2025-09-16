@@ -1,147 +1,146 @@
+:root {
+  --primary-color: #5c6ac4;
+  --secondary-color: #eef1f8;
+  --text-color: #333333;
+  --background-color: #ffffff;
+  --border-color: #e1e4e8;
+  --hover-color: #4a55a8;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   color: #333;
-   overflow: hidden;
-   user-select: none;
-   -webkit-user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  background-color: transparent;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Container styling */
 .popup-container {
-   height: 100vh;
-   display: flex;
-   flex-direction: column;
-   background: rgba(255, 255, 255, 0.95);
-   backdrop-filter: blur(10px);
-   border-radius: 15px;
-   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-   margin: 10px;
-   border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(200, 200, 200, 0.3);
 }
 
+/* Header styling */
 .header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 20px 25px 15px;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-   border-radius: 15px 15px 0 0;
-   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f8f9fa;
 }
 
 .title {
-   font-size: 18px;
-   font-weight: 600;
-   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
 .close-btn {
-   background: none;
-   border: none;
-   font-size: 24px;
-   color: white;
-   cursor: pointer;
-   padding: 5px;
-   border-radius: 50%;
-   width: 35px;
-   height: 35px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   transition: background-color 0.2s;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
 }
 
 .close-btn:hover {
-   background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* Content styling */
 .content {
-   flex: 1;
-   padding: 25px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .thought-text {
-   font-size: 16px;
-   line-height: 1.6;
-   margin-bottom: 20px;
-   color: #2c3e50;
-   font-weight: 500;
-   font-style: italic;
-   min-height: 60px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #333;
+  min-height: 60px;
 }
 
 .translation {
-   font-size: 14px;
-   line-height: 1.5;
-   margin-bottom: 15px;
-   color: #5a6c7d;
-   font-style: normal;
-   min-height: 40px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  color: #555;
+  font-style: italic;
+  min-height: 40px;
 }
 
 .source {
-   font-size: 12px;
-   color: #8e9aaf;
-   font-weight: 600;
-   text-align: right;
-   margin-top: auto;
+  font-size: 12px;
+  color: #777;
+  text-align: right;
+  margin-top: 8px;
 }
 
+/* Footer styling */
 .footer {
-   padding: 15px 25px 20px;
-   text-align: center;
+  padding: 16px 20px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f8f9fa;
 }
 
 .ok-btn {
-   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-   color: white;
-   border: none;
-   padding: 12px 30px;
-   border-radius: 25px;
-   font-size: 14px;
-   font-weight: 600;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-   text-transform: uppercase;
-   letter-spacing: 0.5px;
+  background-color: #5d87ff;
+  color: white;
+  border: none;
+  padding: 8px 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .ok-btn:hover {
-   transform: translateY(-2px);
-   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+  background-color: #4a6fe3;
 }
 
 .ok-btn:active {
-   transform: translateY(0);
+  transform: translateY(1px);
 }
 
 /* Loading animation */
 .loading {
-   animation: pulse 1.5s ease-in-out infinite;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-   0% { opacity: 1; }
-   50% { opacity: 0.5; }
-   100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 
 /* Responsive adjustments */
@@ -159,4 +158,69 @@ body {
    .content {
        padding: 15px;
    }
+}
+
+/* Button styles */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Button container for alignment */
+.button-container {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  margin-top: 20px;
+}
+
+/* For secondary/outline buttons */
+button.secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+button.secondary:hover {
+  background-color: rgba(92, 106, 196, 0.1);
+}
+
+/* Form elements styling */
+input, select, textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  background-color: var(--background-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Card styling for content sections */
+.card {
+  background-color: var(--secondary-color);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
 }

@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Thought Reminder</title>
-   <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jinvani</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div class="popup-container">
-       <div class="header">
-           <h2 class="title">🙏 Spiritual Thought</h2>
-           <button class="close-btn" id="closeBtn">×</button>
-       </div>
-       
-       <div class="content">
-           <div class="thought-text" id="thoughtText">
-               Loading today's thought...
-           </div>
-           
-           <div class="translation" id="translation">
-               Translation will appear here...
-           </div>
-           
-           <div class="source" id="source">
-               - Source
-           </div>
-       </div>
-       
-       <div class="footer">
-           <button class="ok-btn" id="okBtn">OK, I Acknowledge</button>
-       </div>
-   </div>
-
-   <script src="renderer.js"></script>
+  <div class="popup-container">
+    <header class="header">
+      <div class="title">Jinvani</div>
+      <button id="closeBtn" class="close-btn" aria-label="Close">×</button>
+    </header>
+    
+    <div class="content">
+      <div id="thoughtText" class="thought-text">
+        <!-- Thought will be displayed here -->
+      </div>
+      
+      <div id="translation" class="translation">
+        <!-- Translation will be displayed here -->
+      </div>
+      
+      <div id="source" class="source">
+        <!-- Source will be displayed here -->
+      </div>
+    </div>
+    
+    <div class="footer">
+      <button id="okBtn" class="ok-btn">Acknowledge</button>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
 </body>
 </html>
